@@ -1,15 +1,11 @@
 from aiogram import Router
 
-from .start import router as start_router
-from .announce import router as announce_router
-from .broadcast import router as broadcast_router
-from .groups import router as groups_router
-from .schedule import router as schedule_router
+from . import start, announce, broadcast, groups, schedule
 
 router = Router()
 
-router.include_router(start_router)
-router.include_router(announce_router)
-router.include_router(broadcast_router)
-router.include_router(groups_router)
-router.include_router(schedule_router)
+router.include_router(start.router)
+router.include_router(announce.router)
+router.include_router(broadcast.router)
+router.include_router(groups.router)
+router.include_router(schedule.router)
